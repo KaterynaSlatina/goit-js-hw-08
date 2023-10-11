@@ -4,7 +4,7 @@ const FEEDBACK_KEY = "feedback-form-state";
 
 const form = document.querySelector('.feedback-form');
 const email = document.querySelector('input[name="email"]');
-const message = document.querySelector('textarea=[name="message"]');
+const message = document.querySelector('textarea[name="message"]');
 
 const savedMessage = function (evt) {
     const formData = {
@@ -32,13 +32,14 @@ function inTextarea() {
 
 form.addEventListener('submit', (evt) => {
     evt.preventDefault();
-    console.log({ email: email.value, message: message.value });
     if (!email.value || !message.value) {
         return alert`Please, fill in all the fields`
     };
 
     localStorage.removeItem(FEEDBACK_KEY);
-    form.reset();
+    console.log({ email: email.value, message: message.value });
+
+    // form.reset();
 });
     
 
