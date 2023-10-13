@@ -7,6 +7,9 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, 0)}`;
 }
 
+startBtn.addEventListener('click', startChangingColor);
+stopBtn.addEventListener('click', stopChangingColor);
+
 function startChangingColor() {
 startBtn.disabled = true; 
 intervalId = setInterval(() => {
@@ -19,7 +22,6 @@ startBtn.disabled = false; //
 clearInterval(intervalId);
 }
 
-startBtn.addEventListener('click', startChangingColor);
-stopBtn.addEventListener('click', stopChangingColor);
+
 
     
